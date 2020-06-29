@@ -2,12 +2,13 @@ import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import styled from 'styled-components'
-import { theme } from "../../utilis/theme"
+
 
 const YTContainer = styled.section`
 	padding: 120px 0 100px;
 	height: 100%;
 	overflow: hidden;
+	margin-left: 150px;
 
 	@media(min-width:767px){
 		padding: 150px 0;
@@ -23,6 +24,7 @@ const YTContainer = styled.section`
 		position: absolute;
 		bottom: 0;
 		left: 0;
+		
 
 		@media(max-width:767px){
 			flex-direction: column;
@@ -34,6 +36,10 @@ const YTContainer = styled.section`
 			margin-left: 5%;
 		}
 		
+		@media (min-width: 1200px){
+			margin-bottom: -50px
+		}
+
 		a{
 			
 			width: 300px;
@@ -50,7 +56,7 @@ const YTContainer = styled.section`
 	}
 
 	.yt__text {
-		width: 90%;
+		width: 95%;
 		background: white;
 		margin-right: 0;
 		margin-left: 0;
@@ -135,8 +141,8 @@ const Yt = ({ dictionary, lang }) => {
 
 	return (
 
-		<YTContainer className="yt" id="yt">
-			<div className="row" >
+		<YTContainer id="yt">
+			<div className="row">
 
 				<div className="container">
 					<div className="yt__text">
@@ -154,8 +160,6 @@ const Yt = ({ dictionary, lang }) => {
 						)}
 
 					</div>
-
-
 
 				</div>
 

@@ -58,7 +58,7 @@ module.exports = {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         google: {
-          families: ['Lato', 'Playfair Display']
+          families: ['Playfair Display', 'Lato']
         }
       }
     },
@@ -74,13 +74,14 @@ module.exports = {
     {
       resolve: `gatsby-source-instagram`,
       options: {
-        username: `https://www.instagram.com/ngnails.pl`,
-        // access_token: "IGQVJYNmRrSkxlbWZAQYlRUU0FWMlJEeFR3TDJ0OHVIRUtUQk81MnNTRHdkaWR2TDJ6QmF0M2pmRmZAjY2NrRFBnUGhkTUh2UFV2ZAFpzN2MyZA3V1bFNKZAVhhYTVzR1dQbGRwZAkFpMmtHX0tYNEt5YjJMOQZDZD",
-        // instagram_id: "243327832",
-        // paginate: 1,
-        // maxPosts: 10,
+        username: `ngnails.pl`,
+        access_token: "EAA5nAaPZCJ1YBAI1FSlO2gk7UnvlFfT4WUUmBnX5yUJlUAzZAB6jvyYhlA9uu5W1DM5y7QUmssTnPodpK3JZB630dTrbFWL80nUoDX1IAM5GrmsbMu7KZCccEU1Y5XnxAgWdUv96HYOLHnJUoI0aJ3AXZCYQzhC2M153eMMIJtQZDZD",
+        instagram_id: "17841401914963801",
+        paginate: 100,
+        maxPosts: 10,
       },
     },
+
 
     `gatsby-plugin-smoothscroll`
 

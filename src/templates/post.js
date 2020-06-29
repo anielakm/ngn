@@ -1,18 +1,34 @@
 import React, { Component } from "react"
-import PropTypes from "prop-types"
-import Img from "gatsby-image"
+import Header from '../components/blog/header'
+import Nav from '../components/blog/nav'
+import GlobalStyle from '../styles/globalStyles'
+import Footer from '../components/footer'
+import Sidebar from '../components/blog/sidebar'
+import styled from 'styled-components'
+import Img from 'gatsby-image'
+
+const SinglePost = styled.main`
+
+`
 
 class PostTemplate extends Component {
-	render() {
-		const post = this.props.data.wordpressPost
+    render() {
+        const post = this.props.data.wordpressPost
 
-		return (
-			<div>
-				<h1 dangerouslySetInnerHTML={{ __html: post.title }} />
-				<div dangerouslySetInnerHTML={{ __html: post.content }} />
-			</div>
-		)
-	}
+        return (
+            <>
+                <GlobalStyle />
+                <Header />
+                <Nav />
+                <SinglePost>
+                    <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
+                    <div dangerouslySetInnerHTML={{ __html: post.content }} />
+                </SinglePost>
+                <Sidebar />
+                <Footer />
+            </>
+        )
+    }
 }
 
 

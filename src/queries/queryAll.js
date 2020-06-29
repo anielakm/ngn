@@ -12,6 +12,32 @@ module.exports = `
                 }
             }
         }
+
+
+
+        allWordpressCategory {
+            edges {
+              node {
+                slug
+                name
+                id
+              }
+            }
+          }
+
+
+          allWordpressTag {
+            edges {
+              node {
+                id
+                name
+                slug
+              }
+            }
+          }
+
+
+
         
         allWordpressPost {
             edges {
@@ -23,6 +49,25 @@ module.exports = `
                     format
                     title
                     date
+                    content
+                    categories {
+                        id
+                        name
+                      }
+                      featured_media{
+                        localFile{
+                            childImageSharp{
+                                fluid{
+                                    srcSet
+                                }
+                            }
+                        }
+                    }
+                    tags {
+                        id
+                        name
+                        slug
+                      }
                 }
             }
         }

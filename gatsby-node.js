@@ -11,6 +11,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
 	return new Promise((resolve, reject) => {
 		// Templates
 		const postTemplate = path.resolve("./src/templates/post.js");
+		const perPage = 6;
 
 		resolve(
 			graphql(queryAll).then(result => {
@@ -23,19 +24,22 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
 					edges: posts,
 					createPage: createPage,
 					pageTemplate: "src/templates/posts.js",
-					pageLength: 6,
+					pageLength: perPage,
 					pathPrefix: "blog"
 				})
 
+
 				posts.forEach(edge => {
 					createPage({
-						path: `/post/${edge.node.slug}/`,
+						path: `/${edge.node.slug}/`,
 						component: slash(postTemplate),
 						context: {
 							id: edge.node.id,
 						},
 					});
 				})
+
+
 
 			})
 		)
